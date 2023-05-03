@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar_left__items" >
+                <li><a href="#"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#"><i class="fa fa-home"></i></a></li>
+                <li><a href=""><i class="fa">&#xf002;</i></a></li>
+            </ul>
+            <ul class="navbar_right__items" >
+                <li><a href="#"><i  class="fa">&#xf017;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf0f4;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf0f5;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf252;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf0a2;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf206;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf2d1;</i></a></li>
+                <li><a href="#"><i  class="fa">&#xf096;</i></a></li>                
+                <li><a href="#"><i class="fa">&#xf00d;</i></a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <ul class="aside">
+            <a  href="#">
+                <li class="aside_item today">Today</li>
+                
+            </a>
+            <a  href="#">
+                <li class="aside_item done_taskes notification">Done Tasks<span class="badge">3</span></li>
+                
+            </a>
+            <a href="#">
+                <li class="aside_item">Upcoming</li>
+            </a>
+            <a href="#">
+                <li class="aside_item">Filters</li>
+            </a>
+        </ul>
+    </aside> 
+    <main class="container">
+        <div class="container_today">
+            <!-- display today title && date  -->
+            <div class="display-date">
+                <span class="day_title">Today</span>
+                <span id="day">day</span>,
+                <span id="daynum">00</span>
+                <span id="month">month</span>
+                <span id="year">0000</span>
+            </div>
+            <!-- add_task_btn in today page -->
+            <div class="add_task_btn">
+                <button><i class="fa">&#xf067;</i> Add Task</button>
+            </div>
+            <!-- todo items list -->
+            <div class="todo_items">
+                <ul class="todo_items_list">
+            
+                </ul>
+            </div>
+            <!-- form activities -->
+            <form action="#" class="form_activities">
+                <div class="form_task_items">
+                    <div class="task_name">
+                        <input class="taskName" onkeyup="disable_addTask_btn()" type="text" placeholder="Task name"/>
+                    </div>
+                    <div class="task_time">
+                        <input type="number" class="task_time" name="task_time" id="minutesPerDay" placeholder="minutes" />
+                    </div>
+                </div>
+                <div class="add_cancel_btns">
+                    <input type="button" value="cancel" id="cancel_btn"  />
+                    <input type="button" value="Add task" id="add_btn" />
+                </div>
+            </form>
+        </div>
+        <div class="container_DoneTaskes">
+            <div class="doneTitlepage"><span class="done_title">Done Taskes</span></div>
+            <!-- done items list -->
+            <div class="done_items">
+                <ol class="done_items_list">
+                </ol>
+            </div>
+        </div>
+
+    </main>   
+       
+    <script src="script.js"></script>
+</body>
+</html>

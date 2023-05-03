@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "aside main main";
+  grid-template-rows: 3rem 1fr;
+  grid-template-columns: 30% 1fr;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: #ff1d58;
+  /* height: 3rem; */
+}
+
+main {
+  grid-area: main;
+  /* background-color: blue; */
+}
+
+aside {
+  grid-area: aside;
+  background-color: aqua;
+}
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body {
+    height: 120vh;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside";
+    grid-template-rows: 3rem 1fr 40%;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* header styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.5rem;
+}
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+ul li i {
+  color: #fff;
+  font-weight: 100;
+  padding: 0.4rem 0.6rem;
+}
+ul li i:hover {
+  background-color: #f42f64;
+  border-radius: 3px;
+}
+.navbar_left__items li:nth-child(3) {
+  width: 5rem;
+}
+@media screen and (max-width: 500px) {
+  .navbar_right__items li:nth-child(1),
+  .navbar_right__items li:nth-child(2),
+  .navbar_right__items li:nth-child(3),
+  .navbar_right__items li:nth-child(4),
+  .navbar_right__items li:nth-child(5),
+  .navbar_right__items li:nth-child(6) {
+    display: none;
+  }
+  .navbar_left__items li:nth-child(2),
+  .navbar_left__items li:nth-child(3) {
+    display: none;
+  }
+}
+
+/* aside styling */
+
+aside ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+  width: 70%;
+}
+
+aside ul a {
+  color: #444;
+  text-decoration: none;
+
+  font-size: 0.7rem;
+}
+aside ul li {
+  padding: 0.5rem 1rem;
+  margin-left: 0.8rem;
+  border-radius: 3px;
+}
+aside ul li:hover {
+  background-color: cadetblue;
+}
+@media screen and (max-width: 500px) {
+  aside ul {
+    width: 50%;
+  }
+}
+
+/* styling date() */
+.display-date {
+  font-size: 0.6rem;
+  padding: 1.5rem 0 0 3rem;
+}
+.day_title {
+  color: #333;
+  font-size: 1.3rem;
+}
+/* styling add_task_btn */
+.add_task_btn {
+  padding: 1rem 0 0 3rem;
+}
+.add_task_btn button {
+  border: none;
+  background-color: #fff;
+  font-size: 0.6rem;
+  color: #787575;
+}
+.add_task_btn button i {
+  padding-right: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.add_task_btn button:hover {
+  color: #ff1d58;
+}
+.add_task_btn i:hover {
+  color: #f42f64;
+}
+
+/* styling form */
+.form_activities {
+  display: none;
+  border: 1px solid #e4dfdf;
+  margin: 1.5rem 0 1rem 3rem;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.taskName,
+.task_time {
+  font-size: 0.6rem;
+  border: none;
+  color: #292828;
+  margin-bottom: 0.2rem;
+  outline: none;
+}
+.form_task_items {
+  margin: 0.2rem 0 0 1rem;
+}
+.add_cancel_btns {
+  display: flex;
+  justify-content: end;
+  border-top: 1px solid #e4dfdf;
+  padding: 0.5rem;
+}
+#add_btn {
+  color: #fff;
+  background-color: #ff1d58;
+}
+
+
+
+#cancel_btn {
+  color: #444;
+}
+#cancel_btn,
+#add_btn {
+  outline: none;
+  border: none;
+  margin: 0 0.2rem;
+  font-size: 0.4rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* styling todo_items */
+.todo_items,
+.done_items {
+  margin: 1.5rem 0 1rem 3rem;
+}
+.todo_items_list {
+  margin: 0;
+  padding: 0;
+}
+.todo_items_list li {
+  padding: 0.3rem;
+  font-size: 0.8rem;
+}
+a {
+  text-decoration: none;
+}
+
+/* styling done_items */
+.container_DoneTaskes{
+  display: none;
+}
+.doneTitlepage{
+  font-size: 0.6rem;
+   padding: 1.5rem 0 0 3rem;
+}
+.done_title {
+  color: #333;
+  font-size: 1.3rem;
+}
+.done_task {
+  width: 70%;
+  font-size: 1rem;
+  /* border-bottom: 1px solid #e4dfdf; */
+  color: #3e3f3f;
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05),
+    0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+.done_task:hover {
+  color: #212222;
+  font-size: 1.2rem;
+}
+
+/* put notofication on done task */
+/* .notification {
+  position: relative;
+}
+
+.notification:hover {
+  background: red;
+}
+
+*/
+.notification{
+  position: relative;
+}
+.notification .badge {
+  display: none;
+  position: absolute;
+   top: 3px;
+  /*right: 1px; */
+  padding: 0.1rem 0.3rem;
+  border-radius: 100%;
+  color: white;
+  background-color: #ff1d58;
+  font-weight: bold;
+}
+
+
